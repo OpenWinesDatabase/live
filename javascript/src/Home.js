@@ -61,6 +61,9 @@ export class Home extends Component {
                             <a className="" onClick={this.goToSearch}>
                                 <span className="glyphicon glyphicon-search" /> Go!
                             </a>
+                            <a className="" onClick={this.gotoSnap}>
+                                <span className="glyphicon glyphicon-facetime-video" /> Snap!
+                            </a>
                         </div>
                     </form>
                 </div>
