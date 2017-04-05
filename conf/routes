@@ -1,6 +1,7 @@
 # Routes
 
 GET         /                         controllers.HomeController.index
+
 GET         /auth/login               controllers.Auth0Controller.login(redirect: Option[String])
 GET         /auth/logout              controllers.Auth0Controller.logout
 GET         /auth/callback            controllers.Auth0Controller.callback(code: Option[String])

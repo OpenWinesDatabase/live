@@ -51,7 +51,7 @@
                             @if(user.isDefined) {
                                 <li class="pull-right"><a style="font-size: 22px" title="logout" href="@routes.Auth0Controller.logout"><i class="glyphicon glyphicon-off"></i></a></li>
                                 <img class="wino" src="/assets/images/icon_144_white.png" style="width: 30px; border-radius: 50%; margin-bottom: 5px" />
-                                <img src="@(user.map(u => (u \ "picture").as[String]).getOrElse("#")))" style="width: 40px; border-radius: 50%; margin-top: 5px" />
+                                <img src="@(user.map(u => (u \ "picture").as[String]).getOrElse("#"))" style="width: 40px; border-radius: 50%; margin-top: 5px" />
                             } else {
                                 <li><a href="@routes.Auth0Controller.login(None)">Login</a></li>
                             }
