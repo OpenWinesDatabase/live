@@ -1,7 +1,7 @@
 @import play.api.libs.json.JsValue
 
 @import play.api.libs.json.JsObject
-@(title: String, moreScripts: Html = play.twirl.api.Html(""), moreStyles: Html = play.twirl.api.Html(""))(content: Html)
+@(title: String, user: Option[JsValue] = None, moreScripts: Html = play.twirl.api.Html(""), moreStyles: Html = play.twirl.api.Html(""))(content: Html)
 
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +44,13 @@
 
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
-
+                        @if(user.isDefined) {
+                            <li class="pull-right"><a style="font-size: 22px" title="logout" href="@routes.Auth0Controller.logout"><i class="glyphicon glyphicon-off"></i></a></li>
+                            <img class="wino" src="/assets/images/icon_144_white.png" style="width: 30px; border-radius: 50%; margin-bottom: 5px" />
+                            <img src="@(user.map(u => (u \ "picture").as[String]).getOrElse("#"))" style="width: 40px; border-radius: 50%; margin-top: 5px" />
+                        } else {
+                            <li><a href="@routes.Auth0Controller.login(None)">Login</a></li>
+                        }
                         </ul>
                     </div>
                 </div>
