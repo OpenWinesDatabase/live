@@ -1,0 +1,11 @@
+@()
+
+@moreScripts = {
+    <script>
+        OpenWinesDatabase.init(document.getElementById('app'));
+    </script>
+}
+
+@main("LiveOpenWinesDatabase", moreScripts = moreScripts) {
+    <div id="app"></div>
+}
