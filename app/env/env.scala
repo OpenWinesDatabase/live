@@ -23,8 +23,4 @@ object Env extends GoodOldPlayframework {
     Configuration.getString("app.auth0.callbackUrl").get,
     Configuration.getString("app.auth0.domain").get
   )
-<<<<<<< HEAD
-=======
-
->>>>>>> master
 }
