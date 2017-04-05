@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Router, Route, IndexRoute, Link, browserHistory } from 'react-router';
 
 import { Home } from './Home';
+import { Home0 } from './Home0';
 import { SearchWines } from './browse/SearchWines';
 import { BrowseCountries } from './browse//BrowseCountries';
 import { BrowseRegions } from './browse//BrowseRegions';
@@ -31,6 +32,7 @@ export class RoutedApp extends Component {
             <Router history={browserHistory}>
                 <Route path="/" component={App}>
                     <IndexRoute component={Home} />
+                    <Route path="home" component={Home0} />
                     <Route path="search" component={SearchWines} />
                     <Route path="browse/countries" component={BrowseCountries} />
                     <Route path="browse/regions" component={BrowseRegions} />
